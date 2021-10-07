@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import SubscribersTable from "../SubscribersTable/SubscribersTable";
 
 const SubscribersList = () => {
     const [data, setData] = useState([]);
@@ -17,14 +18,18 @@ const SubscribersList = () => {
     }, []);
 
     return (
-        <ul>
-            {data && data.map(record => (
-                <li key={record.id}>
-                    <p>{record.fields.name}</p>
-                    <p>{record.fields.email}</p>
-                </li>
-            ))}
-        </ul>
+        // <ul>
+        //     {data && data.map(record => (
+        //         <li key={record.id}>
+        //             <p>{record.fields.name}</p>
+        //             <p>{record.fields.email}</p>
+        //             <p>{record.fields.created}</p>
+        //         </li>
+        //     ))}
+        // </ul>
+        <div>
+            {data && <SubscribersTable data={data} />}
+        </div>
     )
 };
 

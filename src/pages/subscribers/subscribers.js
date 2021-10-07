@@ -1,12 +1,10 @@
-import Navigation from '../../components/Navigation/Navigation';
+import LayoutTemplate from '../../components/LayoutTemplate/LayoutTemplate';
 import SubscribersList from '../../components/SubscribersList/SubscribersList';
 
 const Subscribers = () => (
-    <div>
-        <Navigation />
-        <h1>Subscribers</h1>
+    <LayoutTemplate title="Subscribers">
         <SubscribersList />
-    </div>
+    </LayoutTemplate>
 );
 
 export default Subscribers;
