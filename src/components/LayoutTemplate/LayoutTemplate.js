@@ -7,14 +7,17 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import Fab from '@mui/material/Fab';
+import MenuIcon from '@mui/icons-material/Menu';
+import AddIcon from '@mui/icons-material/Add';
+import PeopleAltSharpIcon from '@mui/icons-material/PeopleAltSharp';
+import MessageSharpIcon from '@mui/icons-material/MessageSharp';
 
 const drawerWidth = 200;
 
@@ -31,20 +34,20 @@ const LayoutTemplate = (props) => {
         <Toolbar />
         <Divider />
             <List>
-                <Link to="/subscribers">
+                <Link to="/subscribers" style={{ textDecoration: 'none', color: '#20262D'}}>
                     <ListItem button key="subscribers">
                         <ListItemIcon>
-                            <InboxIcon />
+                            <PeopleAltSharpIcon />
                         </ListItemIcon>
-                        <ListItemText primary="subscribers" />   
+                        <ListItemText>subscribers</ListItemText>   
                     </ListItem>
                 </Link>
-                <Link to="/">
+                <Link to="/" style={{ textDecoration: 'none', color: '#20262D'}}>
                     <ListItem button key="campaigns">
                         <ListItemIcon>
-                            <InboxIcon />
+                            <MessageSharpIcon />
                         </ListItemIcon>
-                        <ListItemText primary="kampanie" />
+                        <ListItemText>campaign</ListItemText>
                     </ListItem>
                 </Link>
             </List>
@@ -59,8 +62,8 @@ const LayoutTemplate = (props) => {
             <AppBar
                 position="fixed"
                 sx={{
-                width: { sm: `calc(100% - ${drawerWidth}px)` },
-                ml: { sm: `${drawerWidth}px` },
+                    width: { sm: `calc(100% - ${drawerWidth}px)` },
+                    ml: { sm: `${drawerWidth}px` },
                 }}
             >
                 <Toolbar>
@@ -113,6 +116,11 @@ const LayoutTemplate = (props) => {
                 <Toolbar />
                 {props.children}
             </Box>
+            <Link to="/">
+                <Fab color="primary" aria-label="add" sx={{ position: 'fixed', bottom: '30px', right: '30px' }}>
+                    <AddIcon />
+                </Fab>
+            </Link>
         </Box>
     );
 };
